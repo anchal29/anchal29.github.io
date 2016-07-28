@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anchal - GSoC'16 - Community bonding period</title>
+  <meta name="author" content="Anchal" />
+  <meta name="description" content="The blog of Anchal" />
+  <link rel="canonical" href="http://example.com/blog/2016/05/22/GSoC'16-Community-Bonding-Period.html" />
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="Anchal" href="http://example.com/atom.xml" />
+
+  <link rel="stylesheet" href="/assets/css/all.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+      <nav>
+  <h1>Hi.</h1>
+  <a href="/">
+    
+    <img src="/logo.png" id="logo" alt="Blog logo"/>
+    
+  </a>
+  <h2>I'm <a href="/">Anchal</a>.</h2>
+  <div id="bio">
+    <p style="text-align: center;">Drupal, GSoC and anime</p>
+  </div>
+  <div id="social">
+    Follow me:
+<div id="stalker">
+  
+  <a title="anchal29 on Github" href="https://github.com/anchal29">
+    <i class="fa fa-github-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Anchal on Facebook" href="https://facebook.com/anchal.pandey.186">
+    <i class="fa fa-facebook-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Atom feed" id="atom" href="/atom.xml">
+    <i class="fa fa-rss-square"></i>
+  </a>
+  
+</div>
+
+  </div>
+</nav>
+
+    </div>
+
+    <div class="eleven columns content">
+      <p class="meta">
+  May 22, 2016 
+  <a href="/">
+    <i class="home fa fa-home"></i>
+  </a>
+</p>
+
+<h1 class="title">GSoC'16 - Community bonding period</h1>
+
+<div id="post">
+  <hr />
+
+<blockquote>
+  <p>Google Summer of Code (GSoC) is a global program that matches students up with open source, free software and technology-related organizations to write code and get paid to do it! The organizations provide mentors who act as guides through the entire process, from learning about the community to contributing code. The idea is to get students involved in and familiar with the open source community and help them to put their summer break to good use. For any information related to GSoC I would recommend to visit the <a href="https://developers.google.com/open-source/gsoc/resources/manual#student_manual">manual page</a>.</p>
+</blockquote>
+
+<p>The results of GSoC’16 came out on 23rd of April and and I was happy to find out that I was selected. I would like to thank my mentors - László Csécsy(<a href="https://www.drupal.org/u/boobaa">boobaa</a>) and Czövek András(<a href="https://www.drupal.org/u/czigor">czigor</a>), <a href="https://www.drupal.org/u/slurpee">slurpee</a> and <a href="https://www.drupal.org/u/cs_shadow">cs_shadow</a> for providing necessary suggestions while preparing my proposal. Getting accepted for the Google Summer of Code marked the beginning of the Community bonding period. The community bonding period is all about, well, community bonding. Rather than jumping straight into coding, you’ve got some time to learn about your organization’s processes - release and otherwise - developer interactions, codes of conduct, etc.</p>
+
+<p><strong>Project:</strong> Porting Comment Alter module to Drupal 8.</p>
+
+<p><strong>Community Bonding Period</strong>
+I had my semester exams, projects and assignments so I couldn’t give it a lot of time but I remained in contact with my mentors (<a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>). We were in constant touch via mail and also we <a href="https://github.com/anchal29/comment_alter">had</a> a hangout meeting last Friday over which we had the following discussion:</p>
+
+<ul>
+  <li>I’ll be maintaining my code initially on github. The repo can be accessed <a href="https://github.com/anchal29/comment_alter">here</a>.</li>
+  <li>My mentors will be reviewing my code on daily basis during most of the working days and I’ll proceed function by function of the D7 module for the port as it was explained in the proposal in detail.</li>
+</ul>
+
+<p>I went through some of the references as I mentioned in my proposal. These references covered Form API, Configuration API and Comment module in which I tried to cover the following things:</p>
+
+<ul>
+  <li>Form API: I created some small modules by using the Form API and also I tried to go through altering the forms using hooks which are to be used in the module.</li>
+  <li>Configuration API: In configurational API I went through the configuration schema part of it which will be used in the module for form_alter using third party settings.</li>
+  <li>menu_ui is one of the good examples which I found in core which implements hook_form_BASE_FORM_ID_alter by using third party settings.</li>
+</ul>
+
+<p>I’m thankful to László Csécsy for providing me with exercises for the past couple of months which helped me getting a better understanding of Drupal and the module. I have created
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (<a href="http://anchal298pygasvddu.devcloud.acquia-sites.com/">Link to the page</a>). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.</p>
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+    <li>
+      <span>26 Jul 2016 &raquo;</span> <a href="/blog/2016/07/26/GSoC'16-Port-Comment-Alter-Module-Week-9.html">GSoC'16 - Port Comment Alter Module - Week 9</a>
+    </li>
+    
+    <li>
+      <span>19 Jul 2016 &raquo;</span> <a href="/blog/2016/07/19/GSoC'16-Port-Comment-Alter-Module-Week-8.html">GSoC'16 - Port Comment Alter Module - Week 8</a>
+    </li>
+    
+    <li>
+      <span>11 Jul 2016 &raquo;</span> <a href="/blog/2016/07/11/GSoC'16-Port-Comment-Alter-Module-Week-7.html">GSoC'16 - Port Comment Alter Module - Week 7</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="footer">
+        <div class="disclaimer">
+  
+
+  <p>
+    © Anchal, 2014 &mdash; built with <a href="http://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/swanson/lagom">Lagom theme</a>
+  </p>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-xxxx-x']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

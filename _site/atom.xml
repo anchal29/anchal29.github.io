@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>The blog of Anchal</title>
+ <link href="http://example.com/atom.xml" rel="self"/>
+ <link href="http://example.com"/>
+ <updated>2016-07-28T18:51:21+05:30</updated>
+ <id>http://example.com</id>
+ <author>
+   <name>Anchal</name>
+   <email>pandey.anchal.95@gmail.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 9</title>
+   <link href="http://example.com/blog/2016/07/26/GSoC'16-Port-Comment-Alter-Module-Week-9.html"/>
+   <updated>2016-07-26T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/07/26/GSoC'16 - Port Comment Alter Module - Week 9</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This week I continued to work on providing test coverage for the module. Last week we decided to use &lt;code&gt;EntityTest&lt;/code&gt; as our parent entity and check the functionality of the module over it but while writing tests I came to know that it didn’t support revisions. To write tests using revisionable entities we have to use &lt;code&gt;EntityTestRev&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;While using &lt;code&gt;EntityTestRev&lt;/code&gt; entity I came across an issue: our alterable fields were not shown on the comment form. However, earlier when I used &lt;code&gt;EntityTest&lt;/code&gt; it was displayed correctly and even the values got altered. It did not display the difference since it did not support revisions. I was stuck here for quite a while figuring out what the real problem was. It turned out that it was a problem with cache invalidation. Field UI was disabled for the EntityTestRev entity thus the &lt;code&gt;comment_alter_field_config_edit_form_alter()&lt;/code&gt; was not called, inside which the cache was deleted.&lt;/p&gt;
+
+&lt;p&gt;After resolving this problem the test was working fine and the differences made from a comment were displayed. Later I worked on the &lt;code&gt;assertCommentDiff()&lt;/code&gt; function which tested the differences displayed over the comment-alter-diff table were expected. For now we have tests for Text Field and I’ll cover other field types by next week (see commit).&lt;/p&gt;
+
+&lt;p&gt;So by the end of the week I completed the function &lt;code&gt;assertCommentDiff()&lt;/code&gt; and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 8</title>
+   <link href="http://example.com/blog/2016/07/19/GSoC'16-Port-Comment-Alter-Module-Week-8.html"/>
+   <updated>2016-07-19T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/07/19/GSoC'16 - Port Comment Alter Module - Week 8</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So by the end of the week I completed the function assertCommentDiff() and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 7</title>
+   <link href="http://example.com/blog/2016/07/11/GSoC'16-Port-Comment-Alter-Module-Week-7.html"/>
+   <updated>2016-07-11T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/07/11/GSoC'16 - Port Comment Alter Module - Week 7</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So by the end of the week I completed the function assertCommentDiff() and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 6</title>
+   <link href="http://example.com/blog/2016/07/04/GSoC'16-Port-Comment-Alter-Module-Week-6.html"/>
+   <updated>2016-07-04T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/07/04/GSoC'16 - Port Comment Alter Module - Week 6</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 5</title>
+   <link href="http://example.com/blog/2016/06/28/GSoC'16-Port-Comment-Alter-Module-Week-5.html"/>
+   <updated>2016-06-28T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/06/28/GSoC'16 - Port Comment Alter Module - Week 5</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 4</title>
+   <link href="http://example.com/blog/2016/06/20/GSoC'16-Port-Comment-Alter-Module-Week-4.html"/>
+   <updated>2016-06-20T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/06/20/GSoC'16 - Port Comment Alter Module - Week 4</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 3</title>
+   <link href="http://example.com/blog/2016/06/14/GSoC'16-Port-Comment-Alter-Module-Week-3.html"/>
+   <updated>2016-06-14T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/06/14/GSoC'16 - Port Comment Alter Module - Week 3</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 2</title>
+   <link href="http://example.com/blog/drupal%20planet/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html"/>
+   <updated>2016-06-07T00:00:00+05:30</updated>
+   <id>http://example.com/blog/drupal%20planet/2016/06/07/GSoC'16 - Port Comment Alter Module - Week 2</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt about the work which I did in the second week of the coding period of GSoC’16. Blogpost for the work done in week one can be accessed here. .&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 1</title>
+   <link href="http://example.com/blog/2016/05/30/GSoC'16-Port-Comment-Alter-Module-Week-1.html"/>
+   <updated>2016-05-30T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/05/30/GSoC'16 - Port Comment Alter Module - Week 1</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;The coding period for GSoC 2016 started last week from 23rd May and now students are required to start coding for their respective projects. As part of GSoC’16 I have been working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first week of GSoC’16 coding period is over now. During this week I was able to accomplish following tasks:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Creating schema for the module&lt;/strong&gt;: I started out with preparing the schema for the module and created the .install file which implemented hook_schema to store comment ID, old and new revision ID for the parent entity. As pointed out by &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt;, storing the comment ID provided us with the flexibility of leaving out some column from database schema of the module. We can find the parent entity type and entity ID from comment table using the comment ID stored.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Creating a form_alter for settings screen&lt;/strong&gt;: After writing schema for the module, I worked on the first function of our module which implements hook_form_FORM_ID_alter. This provides an interface to select any field we want to be altered by the comment and also hide alteration from diff. So by using the hook_form_FORM_ID_alter we could add these extra options on the field_config_edit_form but there was a change from the D7 version here. Earlier additional field properties were directly stored in the database just with the addition of those custom fields in the form_alter but now we need to use ThirdPartySettings to store the values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Using ThirdPartySettings for storing form_altered values&lt;/strong&gt;: I was stuck here for a while. I went through some of the issues and blogs related to ThirdPartySettings. Content_translation module in core was a good example which used ThirdPartySettings and it even also implemented hook_form_FORM_ID_alter for field_config_edit_form. There were two methods by which we could have used ThirdPartySettings in our module. The one we are using was to use the ThirdPartySettingsInterface provided for FieldConfigInterface. The other one was to create our own builder function. We are not using the other method because it will increase the complexity as we would have to add our own builder function inside which we would set the ThirdPartySettings to store our changes. But it would be independent and will not be affected if any other module also uses ThirdPartySettings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally with the use of ThirdPartySettings we have completed our first function which provides an altered FIeldConfigInterface. My mentors have already reviewed the code for the work which I did in this week. If anyone is interested, my progress can be followed &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>GSoC'16 - Community bonding period</title>
+   <link href="http://example.com/blog/2016/05/22/GSoC'16-Community-Bonding-Period.html"/>
+   <updated>2016-05-22T00:00:00+05:30</updated>
+   <id>http://example.com/blog/2016/05/22/GSoC'16 - Community Bonding Period</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Google Summer of Code (GSoC) is a global program that matches students up with open source, free software and technology-related organizations to write code and get paid to do it! The organizations provide mentors who act as guides through the entire process, from learning about the community to contributing code. The idea is to get students involved in and familiar with the open source community and help them to put their summer break to good use. For any information related to GSoC I would recommend to visit the &lt;a href=&quot;https://developers.google.com/open-source/gsoc/resources/manual#student_manual&quot;&gt;manual page&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The results of GSoC’16 came out on 23rd of April and and I was happy to find out that I was selected. I would like to thank my mentors - László Csécsy(&lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt;) and Czövek András(&lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;), &lt;a href=&quot;https://www.drupal.org/u/slurpee&quot;&gt;slurpee&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/cs_shadow&quot;&gt;cs_shadow&lt;/a&gt; for providing necessary suggestions while preparing my proposal. Getting accepted for the Google Summer of Code marked the beginning of the Community bonding period. The community bonding period is all about, well, community bonding. Rather than jumping straight into coding, you’ve got some time to learn about your organization’s processes - release and otherwise - developer interactions, codes of conduct, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Porting Comment Alter module to Drupal 8.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
+I had my semester exams, projects and assignments so I couldn’t give it a lot of time but I remained in contact with my mentors (&lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;). We were in constant touch via mail and also we &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;had&lt;/a&gt; a hangout meeting last Friday over which we had the following discussion:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I’ll be maintaining my code initially on github. The repo can be accessed &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;My mentors will be reviewing my code on daily basis during most of the working days and I’ll proceed function by function of the D7 module for the port as it was explained in the proposal in detail.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I went through some of the references as I mentioned in my proposal. These references covered Form API, Configuration API and Comment module in which I tried to cover the following things:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Form API: I created some small modules by using the Form API and also I tried to go through altering the forms using hooks which are to be used in the module.&lt;/li&gt;
+  &lt;li&gt;Configuration API: In configurational API I went through the configuration schema part of it which will be used in the module for form_alter using third party settings.&lt;/li&gt;
+  &lt;li&gt;menu_ui is one of the good examples which I found in core which implements hook_form_BASE_FORM_ID_alter by using third party settings.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’m thankful to László Csécsy for providing me with exercises for the past couple of months which helped me getting a better understanding of Drupal and the module. I have created
+some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
+Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
