@@ -14,7 +14,7 @@ The results of GSoC'16 came out on 23rd of April and and I was happy to find out
 **Project:** Porting Comment Alter module to Drupal 8.
 
 **Community Bonding Period**
-I had my semester exams, projects and assignments so I couldn't give it a lot of time but I remained in contact with my mentors ([boobaa](https://www.drupal.org/u/boobaa) and [czigor](https://www.drupal.org/u/czigor)). We were in constant touch via mail and also we [had](https://github.com/anchal29/comment_alter) a hangout meeting last Friday over which we had the following discussion:
+I had my semester exams, projects and assignments so I couldn't give it a lot of time but I remained in contact with my mentors ([boobaa](https://www.drupal.org/u/boobaa) and [czigor](https://www.drupal.org/u/czigor)). We were in constant touch via mail and also we had a hangout meeting last Friday over which we had the following discussion:
 
 * I'll be maintaining my code initially on github. The repo can be accessed [here](https://github.com/anchal29/comment_alter).
 * My mentors will be reviewing my code on daily basis during most of the working days and I'll proceed function by function of the D7 module for the port as it was explained in the proposal in detail.

@@ -90,9 +90,19 @@
 <div id="post">
   <hr />
 
-<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found <a href="../">here</a>.</p>
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the seventh week of the coding period of GSoC’16. The blogpost for the work done in the sixth week can be found <a href="../04/GSoC'16-Port-Comment-Alter-Module-Week-6.html">here</a>.</p>
 
-<p>So by the end of the week I completed the function assertCommentDiff() and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+<p>This week I worked on showing the differences made by a comment on the parent entity which involved using the Diff module. The differences are displayed only for parent entities supporting revisions (Node and Block Content in core). For the rest of the content entities comment alteration is supported but the differences are not shown.</p>
+
+<p>Since we stored the old and new revision IDs along with the comment ID through which the parent entity was changed, we needed to compare the two revisions and display the differences on comment view.</p>
+
+<ul>
+  <li>At first I implemented <code class="highlighter-rouge">hook_ENTITY_TYPE_load()</code> for comments. It loads the old and new revision IDs of the parent entity for that particular comment from the DB and stores them in the <code class="highlighter-rouge">CommentInterface $comment</code> object.</li>
+  <li>After this I worked on <code class="highlighter-rouge">comment_alter_get_changed_fields()</code> which would return us a table showing the differences of the altered fields between the two revisions. This was achieved using the <code class="highlighter-rouge">EntityComparisonBase::compareRevision()</code> method of the Diff module.</li>
+  <li>Finally <code class="highlighter-rouge">hook_ENTITY_TYPE_view()</code> for comments was implemented which renders the table returned from the <code class="highlighter-rouge">comment_alter_get_changed_fields()</code>. I also added a stylesheet for the module.</li>
+</ul>
+
+<p>By the end of the week we were able to display the differences on comments. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
 
 
 </div>

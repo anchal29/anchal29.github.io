@@ -4,7 +4,7 @@
  <title>The blog of Anchal</title>
  <link href="http://example.com/atom.xml" rel="self"/>
  <link href="http://example.com"/>
- <updated>2016-07-28T18:51:21+05:30</updated>
+ <updated>2016-07-28T20:53:57+05:30</updated>
  <id>http://example.com</id>
  <author>
    <name>Anchal</name>
@@ -19,15 +19,19 @@
    <id>http://example.com/blog/2016/07/26/GSoC'16 - Port Comment Alter Module - Week 9</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../19/GSoC&#39;16-Port-Comment-Alter-Module-Week-8.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;This week I continued to work on providing test coverage for the module. Last week we decided to use &lt;code&gt;EntityTest&lt;/code&gt; as our parent entity and check the functionality of the module over it but while writing tests I came to know that it didn’t support revisions. To write tests using revisionable entities we have to use &lt;code&gt;EntityTestRev&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;This week I continued to work on providing test coverage for the module. Last week we decided to use &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTest&lt;/code&gt; as our parent entity and check the functionality of the module over it but while writing tests I came to know that it didn’t support revisions. To write tests using revisionable entities we have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTestRev&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;While using &lt;code&gt;EntityTestRev&lt;/code&gt; entity I came across an issue: our alterable fields were not shown on the comment form. However, earlier when I used &lt;code&gt;EntityTest&lt;/code&gt; it was displayed correctly and even the values got altered. It did not display the difference since it did not support revisions. I was stuck here for quite a while figuring out what the real problem was. It turned out that it was a problem with cache invalidation. Field UI was disabled for the EntityTestRev entity thus the &lt;code&gt;comment_alter_field_config_edit_form_alter()&lt;/code&gt; was not called, inside which the cache was deleted.&lt;/p&gt;
+&lt;p&gt;While using &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTestRev&lt;/code&gt; entity I came across an issue: our alterable fields were not shown on the comment form. However, earlier when I used &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTest&lt;/code&gt; it was displayed correctly and even the values got altered. It did not display the difference since it did not support revisions. I was stuck here for quite a while figuring out what the real problem was.&lt;/p&gt;
 
-&lt;p&gt;After resolving this problem the test was working fine and the differences made from a comment were displayed. Later I worked on the &lt;code&gt;assertCommentDiff()&lt;/code&gt; function which tested the differences displayed over the comment-alter-diff table were expected. For now we have tests for Text Field and I’ll cover other field types by next week (see commit).&lt;/p&gt;
+&lt;p&gt;It turned out that it was a problem with cache invalidation. Field UI was disabled for the &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTestRev&lt;/code&gt; entity thus the &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_field_config_edit_form_alter()&lt;/code&gt; was not called, inside which the cache was deleted. Adding the following lines did the trick for me instead of having Field UI enabled for the parent entity.&lt;/p&gt;
 
-&lt;p&gt;So by the end of the week I completed the function &lt;code&gt;assertCommentDiff()&lt;/code&gt; and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;    &lt;span class=&quot;p&quot;&gt;\&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Drupal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;comment_alter_fields:&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;entityType&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;:&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;vg&quot;&gt;$this&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bundle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After resolving this problem the test was working fine and the differences made from a comment were displayed. Later I worked on the &lt;code class=&quot;highlighter-rouge&quot;&gt;assertCommentDiff()&lt;/code&gt; function which tested the differences displayed over the comment-alter-diff table were expected. For now we have tests for Text Field and I’ll cover other field types by next week (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/92639c8a9e3405cf98fe75b640815e0a561e5a15&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;So by the end of the week I completed the function &lt;code class=&quot;highlighter-rouge&quot;&gt;assertCommentDiff()&lt;/code&gt; and tested it for single valued text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </content>
  </entry>
@@ -39,9 +43,17 @@
    <id>http://example.com/blog/2016/07/19/GSoC'16 - Port Comment Alter Module - Week 8</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the eighth week of the coding period of GSoC’16. The blogpost for the work done in the seventh week can be found &lt;a href=&quot;../11/GSoC&#39;16-Port-Comment-Alter-Module-Week-7.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;So by the end of the week I completed the function assertCommentDiff() and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This week I worked on providing test coverage for the module and fixed some issues. We decided to split the test into multiple classes which would extend one base class. This week I worked on this base class. We are using the entity_test provided by core’s system module for testing purpose instead of any other ContentEntityType so that our tests could be as generic as possible (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/d4e502afd17763791ece4ad778b9d8ada7f8b314&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;As suggested by czigor we are using &lt;code class=&quot;highlighter-rouge&quot;&gt;\Drupal\Tests\BrowserTestBase&lt;/code&gt; over &lt;code class=&quot;highlighter-rouge&quot;&gt;\Drupal\simpletest\WebTestBase&lt;/code&gt; because the WebTestBase is provided by the simpletest module and they are not PHPUnit-based but built specially for Drupal and soon they will be deprecated (see &lt;a href=&quot;https://www.drupal.org/phpunit&quot;&gt;phpunit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;To create PHPUnit-based functional test we need to extend the &lt;code class=&quot;highlighter-rouge&quot;&gt;Drupal\Tests\BrowserTestBase&lt;/code&gt;. Test class files should be at &lt;code class=&quot;highlighter-rouge&quot;&gt;my_module/tests/src/Functional/MyTest.php&lt;/code&gt; and the namespace should be &lt;code class=&quot;highlighter-rouge&quot;&gt;Drupal\Tests\my_module\Functional&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Recently in D7 we came across an issue with the deletion of revision of the parent entity which was causing site failure because we were trying to compare an entity with a NULL value using Diff module. This issue was also addressed for this branch by adding an extra column in our existing schema and then implementing &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_revision_delete()&lt;/code&gt; (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/554f521c76124b346f2cf225bb1decf3ac94240b&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;So by the end of the week I made some progress with the base test class and also fixed an issue related with the parent_entity_revision_delete. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </content>
  </entry>
@@ -53,9 +65,19 @@
    <id>http://example.com/blog/2016/07/11/GSoC'16 - Port Comment Alter Module - Week 7</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the seventh week of the coding period of GSoC’16. The blogpost for the work done in the sixth week can be found &lt;a href=&quot;../04/GSoC&#39;16-Port-Comment-Alter-Module-Week-6.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;So by the end of the week I completed the function assertCommentDiff() and tested in for text fields. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This week I worked on showing the differences made by a comment on the parent entity which involved using the Diff module. The differences are displayed only for parent entities supporting revisions (Node and Block Content in core). For the rest of the content entities comment alteration is supported but the differences are not shown.&lt;/p&gt;
+
+&lt;p&gt;Since we stored the old and new revision IDs along with the comment ID through which the parent entity was changed, we needed to compare the two revisions and display the differences on comment view.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;At first I implemented &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_ENTITY_TYPE_load()&lt;/code&gt; for comments. It loads the old and new revision IDs of the parent entity for that particular comment from the DB and stores them in the &lt;code class=&quot;highlighter-rouge&quot;&gt;CommentInterface $comment&lt;/code&gt; object.&lt;/li&gt;
+  &lt;li&gt;After this I worked on &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_get_changed_fields()&lt;/code&gt; which would return us a table showing the differences of the altered fields between the two revisions. This was achieved using the &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityComparisonBase::compareRevision()&lt;/code&gt; method of the Diff module.&lt;/li&gt;
+  &lt;li&gt;Finally &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_ENTITY_TYPE_view()&lt;/code&gt; for comments was implemented which renders the table returned from the &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_get_changed_fields()&lt;/code&gt;. I also added a stylesheet for the module.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By the end of the week we were able to display the differences on comments. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </content>
  </entry>
@@ -67,9 +89,24 @@
    <id>http://example.com/blog/2016/07/04/GSoC'16 - Port Comment Alter Module - Week 6</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the sixth week of the coding period of GSoC’16. The blogpost for the work done in the fifth week can be found &lt;a href=&quot;../../06/28/GSoC&#39;16-Port-Comment-Alter-Module-Week-5.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Last week I worked on the submit and validate callback functions but in the submit function only the parent entity was stored. In order to show the changes made by a comment we need to create new revision of the parent entity and store the revision ID corresponding to that comment. A revision can be created using &lt;code class=&quot;highlighter-rouge&quot;&gt;setNewRevision&lt;/code&gt; if the entity supports revisions. In case if entity is an instance of &lt;a href=&quot;https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!RevisionableInterface.php/function/RevisionableInterface%3A%3AsetNewRevision/8.2.x&quot;&gt;RevisionLogInterface&lt;/a&gt; we also set the revision_user_id and the creation time. (For e.g. See &lt;a href=&quot;https://api.drupal.org/api/drupal/core%21modules%21node%21src%21NodeForm.php/function/NodeForm%3A%3AsubmitForm/8.2.x&quot;&gt;NodeForm::submitForm()&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;There are some content entity type which doesn’t support revisions like the taxonomy term. For those entity we decided to allow altering of the comment alterable fields from the comment form. Though the changes made by a particular comment wouldn’t be available then as we are using revision for this.
+Later this week I tried to fix following issues related to the field widgets:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Multi-valued fields add more option&lt;/strong&gt;: One of the issue was add_more option of any multi-valued field widget. Clicking the add_more button was resulting in an AJAX error and we were unable to add any extra fields to a multi-valued field. Fix to the issue was rather small, just removing the &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_&lt;/code&gt; prefix from the alterable field names solved this issue.(See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/f0965b87b3ea7fbfdfff7b69510107e0dba3a6b7&quot;&gt;commit&lt;/a&gt;)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Checkboxes/radio buttons and select list widget&lt;/strong&gt;: In case when checkboxes were used as a field widget, &lt;code class=&quot;highlighter-rouge&quot;&gt;Element::children()&lt;/code&gt; was giving a fatal error as there were no any children elements in the &lt;code class=&quot;highlighter-rouge&quot;&gt;$form[$alterable_field][‘widget’]&lt;/code&gt; element. So, to fix this we needed to bail out early or get the column information from the &lt;code class=&quot;highlighter-rouge&quot;&gt;#key_column&lt;/code&gt; property of the form element.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By the end of the week I was able to complete the &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_form_comment_form_alter_submit()&lt;/code&gt; function and fixed some of the issues related to field widgets. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -80,9 +117,16 @@ Since the coding period has started now, the next blog will be on my progress ov
    <id>http://example.com/blog/2016/06/28/GSoC'16 - Port Comment Alter Module - Week 5</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fifth week of the coding period of GSoC’16. The blogpost for the work done in the fourth week can be found &lt;a href=&quot;../20/GSoC&#39;16-Port-Comment-Alter-Module-Week-4.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This week I started working on submit callback function of the altered comment form which should save the changes made on the parent entity’s alterable fields present on our comment form. We can’t directly change these values in parent entity from our comment form so there was a nice trick to it. Build the entity display form again and then set the values of alterable fields in it from the comment form and then save the parent entity display form. So this way when submit function is called comment will be save and also our parent entity will be edited. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/5a1a91c62e4259c26f0205a0a1a2a5e349619b4e&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;After this I worked on validation callback and in similar manner i.e. by creating parent entity display form again and copying values of the comment form, validation for the form was done using &lt;a href=&quot;https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21Display%21EntityFormDisplayInterface.php/function/EntityFormDisplayInterface%3A%3AvalidateFormValues/8.2.x&quot;&gt;EntityFormDisplayInterface::validateFormValues()&lt;/a&gt;. After completing this again I moved back to complete our submit callback function through which we are able to alter fields of parent entity from comment form.&lt;/p&gt;
+
+&lt;p&gt;In order to show those changes we need to create revisions and to save CPU cycles and memory we need to save data only if there was some change in the alterable field entities. So as next step I made sure that anything was saved only if there were some changes in the alterable fields which required to clean up comment form alterable field values and old values to remove any non alterable columns from them. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/bbc6f7ac240642f53a8a4caea260c7249bc0668d&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;By the end of the week I was able to complete the validate and submit function but there are still some issues with submit callback function which needs to be rectified before we proceed further. So, I would like to work on them this week. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -92,10 +136,18 @@ Since the coding period has started now, the next blog will be on my progress ov
    <updated>2016-06-20T00:00:00+05:30</updated>
    <id>http://example.com/blog/2016/06/20/GSoC'16 - Port Comment Alter Module - Week 4</id>
    <content type="html">&lt;hr /&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fourth week of the coding period of GSoC’16. The blogpost for the work done in the third week can be found &lt;a href=&quot;../14/GSoC&#39;16-Port-Comment-Alter-Module-Week-3.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+&lt;p&gt;Fourth week of coding period has ended and this week I worked on completing the comment_form_alter() which is supposedly the toughest part of the comment_alter module. After implementing &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_extra_field_info()&lt;/code&gt; last week, we needed to add field widgets for the pseudo fields added in the &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_extra_field_info()&lt;/code&gt; implementation for the comment alterable fields.&lt;/p&gt;
+
+&lt;p&gt;Adding widgets for these fields could have been done either by adding them directly by specifying the type of the fields but that would lead to lots of validation checks or by getting the widget info directly from the parent entity. We are retrieving widgets information directly from the parent entity add/edit form. Earlier in D7 &lt;code class=&quot;highlighter-rouge&quot;&gt;field_attach_form()&lt;/code&gt; was used for this and now we’ve used &lt;code class=&quot;highlighter-rouge&quot;&gt;entity_get_form_display()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityFormDisplayInterface::buildForm&lt;/code&gt; for the same. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696&quot;&gt;commit&lt;/a&gt; and change record &lt;a href=&quot;https://www.drupal.org/node/2225801&quot;&gt;#2225801&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;Now, the fields should be provided with proper weights retrieved from the comment display form but it turns out that we don’t even need to set the weight of the added fields ourselves, it was taken care automatically for the corresponding fields. Further, all the necessary information which would be required later on were saved in the form element such as  alterable fields and their values. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696&quot;&gt;commit&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;This also involved storing the column or sub-field information for any fields. Many fields have multiple sub-fields or columns like body field has “value” (the actual body), “summary” (the part that is usually displayed in the teaser) and “format” (the text format this field should be rendered with). Similarly, entity_reference fields stores “target_id” instead of values thus in order to tell if a field has changed or not in comment we are storing column information and value for all the alterable fields. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/36dc9ffafe68a416b451c75d65a51e6acec7e887&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;By the end of the week I was able to complete the comment_form alter(). Now, we could see all comment alterable fields of the parent entity on the comment form with their default value as the one saved on parent entity. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
 </content>
  </entry>
  
@@ -106,20 +158,43 @@ Since the coding period has started now, the next blog will be on my progress ov
    <id>http://example.com/blog/2016/06/14/GSoC'16 - Port Comment Alter Module - Week 3</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (&lt;a href=&quot;http://anchal298pygasvddu.devcloud.acquia-sites.com/&quot;&gt;Link to the page&lt;/a&gt;). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the third week of the coding period of GSoC’16. The blogpost for the work done in the second week can be found &lt;a href=&quot;../07/GSoC&#39;16-Port-Comment-Alter-Module-Week-2.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since I was done with &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/1b12cfceac23afce40349d02ebb4a4c705282c89&quot;&gt;get_alterable_fields_function()&lt;/a&gt; last week, this week I started working on comment form alter. My mentors suggested me to port &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_field_extra_fields()&lt;/code&gt; function first, which would add pseudo fields on comment_form for these extra comment_alterable_fields before adding widgets for these fields on the comment_form to expose some control over this to the UI. It would allow sitebuilders to re-order all the comment fields and the comment_alterable_fields. Also this function adds one extra pseudo field on comment_display so as to render the parent entity field changes for the comment in any particular place decided by the sitebuilder.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pseudo fields are simple display/form fields whose position can be controlled from the display settings of a particular entity type. An example of such a field is the core Links field on the node or comment entities. This allows us to add extra fields for a particular entity which can be reordered.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;For more information related to pseudo fields, I would recommend looking at &lt;a href=&quot;https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!entity.api.php/function/hook_entity_extra_field_info/8.2.x&quot;&gt;hook_entity_extra_field_info()&lt;/a&gt; and also I came across this &lt;a href=&quot;https://www.webomelette.com/creating-pseudo-fields-drupal-8&quot;&gt;article&lt;/a&gt; which was helpful to me. This &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/2458eaf72172a933f89448a39bcd911349fee2a1&quot;&gt;commit&lt;/a&gt; implements &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_extra_field_info()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;There were some major changes from D7 to D8 which affected the port of this function.The most important thing was that in D7 we had separate comment types for all content types so it was relatively easy to attach the extra fields of that particular content type to the comment. In D8 however any comment type can be attached to any entity type so we cannot know what extra fields we need o attach to the comment. (See change records &lt;a href=&quot;https://www.drupal.org/node/2100015&quot;&gt;#2100015&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/node/2285633&quot;&gt;#2285633&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;So, in order to attach the extra comment_alterable_fields of the parent entity to its comment types, we need to loop through all the comment types attached to our parent entity (as we may have more than one). I had some problem getting the comment bundle information of the comment fields attached to the parent entity which I later found in the &lt;code class=&quot;highlighter-rouge&quot;&gt;FieldStorageDefinitions&lt;/code&gt;. Basically we wanted to know the comment bundle of the comment field attached to our parent entity but instead it was in &lt;code class=&quot;highlighter-rouge&quot;&gt;FieldStorageDefinitions&lt;/code&gt;. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/859bdc76e1c84b74e7ca54006971ffd8af1f2e63&quot;&gt;commit&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;By the end of the week I was able to implement hook_entity_extra_field_info(). Now I have extra fields in my comment_type _form and _display which I can drag around using the UI. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
 </content>
  </entry>
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 2</title>
-   <link href="http://example.com/blog/drupal%20planet/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html"/>
+   <link href="http://example.com/blog/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html"/>
    <updated>2016-06-07T00:00:00+05:30</updated>
-   <id>http://example.com/blog/drupal%20planet/2016/06/07/GSoC'16 - Port Comment Alter Module - Week 2</id>
+   <id>http://example.com/blog/2016/06/07/GSoC'16 - Port Comment Alter Module - Week 2</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt about the work which I did in the second week of the coding period of GSoC’16. Blogpost for the work done in week one can be accessed here. .&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the second week of the coding period of GSoC’16. The blogpost for the work done in the first week can be found &lt;a href=&quot;../../05/30/GSoC&#39;16-Port-Comment-Alter-Module-Week-1.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The second week of GSoC’16 coding period is over now. During this week I was able to accomplish following tasks:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Make sure that a comment alterable field of parent entity is not present in comment form&lt;/strong&gt;: Now, in Drupal 8 this problem can arise only in one case i.e. when comment is parent entity because now fields are not shared across entity types only across the bundles of a given entity type. As upon discussion with my mentors we concluded that to avoid any unnecessary complications we would remove comment altering options from comment fields which would resolve this problem. This means comment fields can not be altered from comments now, which also doesn’t serve us any purpose.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Get comment alterable fields&lt;/strong&gt;: After providing options to make a field comment alterable and making sure that parent entities fields are not present in comment, I started to work on a function which would return all the comment alterable fields attached to the parent entity. This required getting the &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt; stored previously to check whether a field is comment alterable or not using the field definition. Also in the meantime I was able to learn about caching in Drupal specially about cache invalidation on which I did some mistakes in the beginning. Now, the function works and I’m able to get all the comment alterable fields attached to an entity.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Porting comment_alter_form_node_type_form_alter function&lt;/strong&gt;: Procedural next step for me this week was to work on porting this function of Drupal 7 as it would affect the comment form. For now I provided this form alter for comment fields settings which needs to be moved to entity edit form.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By the end of the week, with this I was able to get the list of the comment alterable fields attached to parent entity. Adding the field widgets for the comment alterable fields in the comment form would be the next step for me. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
 
 </content>
  </entry>
@@ -137,11 +212,11 @@ Since the coding period has started now, the next blog will be on my progress ov
 
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;Creating schema for the module&lt;/strong&gt;: I started out with preparing the schema for the module and created the .install file which implemented hook_schema to store comment ID, old and new revision ID for the parent entity. As pointed out by &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt;, storing the comment ID provided us with the flexibility of leaving out some column from database schema of the module. We can find the parent entity type and entity ID from comment table using the comment ID stored.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Creating a form_alter for settings screen&lt;/strong&gt;: After writing schema for the module, I worked on the first function of our module which implements hook_form_FORM_ID_alter. This provides an interface to select any field we want to be altered by the comment and also hide alteration from diff. So by using the hook_form_FORM_ID_alter we could add these extra options on the field_config_edit_form but there was a change from the D7 version here. Earlier additional field properties were directly stored in the database just with the addition of those custom fields in the form_alter but now we need to use ThirdPartySettings to store the values.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Using ThirdPartySettings for storing form_altered values&lt;/strong&gt;: I was stuck here for a while. I went through some of the issues and blogs related to ThirdPartySettings. Content_translation module in core was a good example which used ThirdPartySettings and it even also implemented hook_form_FORM_ID_alter for field_config_edit_form. There were two methods by which we could have used ThirdPartySettings in our module. The one we are using was to use the ThirdPartySettingsInterface provided for FieldConfigInterface. The other one was to create our own builder function. We are not using the other method because it will increase the complexity as we would have to add our own builder function inside which we would set the ThirdPartySettings to store our changes. But it would be independent and will not be affected if any other module also uses ThirdPartySettings.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Creating a form_alter for settings screen&lt;/strong&gt;: After writing schema for the module, I worked on the first function of our module which implements &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_form_FORM_ID_alter&lt;/code&gt;. This provides an interface to select any field we want to be altered by the comment and also hide alteration from diff. So by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_form_FORM_ID_alter&lt;/code&gt; we could add these extra options on the field_config_edit_form but there was a change from the D7 version here. Earlier additional field properties were directly stored in the database just with the addition of those custom fields in the form_alter but now we need to use &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt; to store the values.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Using ThirdPartySettings for storing form_altered values&lt;/strong&gt;: I was stuck here for a while. I went through some of the issues and blogs related to &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt;. Content_translation module in core was a good example which used ThirdPartySettings and it even also implemented &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_form_FORM_ID_alter&lt;/code&gt; for field_config_edit_form. There were two methods by which we could have used &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt; in our module. The one we are using was to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettingsInterface&lt;/code&gt; provided for &lt;code class=&quot;highlighter-rouge&quot;&gt;FieldConfigInterface&lt;/code&gt;. The other one was to create our own builder function. We are not using the other method because it will increase the complexity as we would have to add our own builder function inside which we would set the &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt; to store our changes. But it would be independent and will not be affected if any other module also uses ThirdPartySettings.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Finally with the use of ThirdPartySettings we have completed our first function which provides an altered FIeldConfigInterface. My mentors have already reviewed the code for the work which I did in this week. If anyone is interested, my progress can be followed &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Finally with the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;ThirdPartySettings&lt;/code&gt; we have completed our first function which provides an altered &lt;code class=&quot;highlighter-rouge&quot;&gt;FieldConfigInterface&lt;/code&gt;. My mentors have already reviewed the code for the work which I did in this week. If anyone is interested, my progress can be followed &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 </content>
  </entry>
@@ -162,7 +237,7 @@ Since the coding period has started now, the next blog will be on my progress ov
 &lt;p&gt;&lt;strong&gt;Project:&lt;/strong&gt; Porting Comment Alter module to Drupal 8.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Community Bonding Period&lt;/strong&gt;
-I had my semester exams, projects and assignments so I couldn’t give it a lot of time but I remained in contact with my mentors (&lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;). We were in constant touch via mail and also we &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;had&lt;/a&gt; a hangout meeting last Friday over which we had the following discussion:&lt;/p&gt;
+I had my semester exams, projects and assignments so I couldn’t give it a lot of time but I remained in contact with my mentors (&lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;). We were in constant touch via mail and also we had a hangout meeting last Friday over which we had the following discussion:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;I’ll be maintaining my code initially on github. The repo can be accessed &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;

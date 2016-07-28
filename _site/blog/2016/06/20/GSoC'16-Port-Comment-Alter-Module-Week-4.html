@@ -89,10 +89,18 @@
 
 <div id="post">
   <hr />
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the fourth week of the coding period of GSoC’16. The blogpost for the work done in the third week can be found <a href="../14/GSoC'16-Port-Comment-Alter-Module-Week-3.html">here</a>.</p>
 
-<p><strong>Community Bonding Period</strong>
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (<a href="http://anchal298pygasvddu.devcloud.acquia-sites.com/">Link to the page</a>). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.</p>
+<p>Fourth week of coding period has ended and this week I worked on completing the comment_form_alter() which is supposedly the toughest part of the comment_alter module. After implementing <code class="highlighter-rouge">hook_entity_extra_field_info()</code> last week, we needed to add field widgets for the pseudo fields added in the <code class="highlighter-rouge">hook_entity_extra_field_info()</code> implementation for the comment alterable fields.</p>
+
+<p>Adding widgets for these fields could have been done either by adding them directly by specifying the type of the fields but that would lead to lots of validation checks or by getting the widget info directly from the parent entity. We are retrieving widgets information directly from the parent entity add/edit form. Earlier in D7 <code class="highlighter-rouge">field_attach_form()</code> was used for this and now we’ve used <code class="highlighter-rouge">entity_get_form_display()</code> and <code class="highlighter-rouge">EntityFormDisplayInterface::buildForm</code> for the same. (See <a href="https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696">commit</a> and change record <a href="https://www.drupal.org/node/2225801">#2225801</a>.)</p>
+
+<p>Now, the fields should be provided with proper weights retrieved from the comment display form but it turns out that we don’t even need to set the weight of the added fields ourselves, it was taken care automatically for the corresponding fields. Further, all the necessary information which would be required later on were saved in the form element such as  alterable fields and their values. (See <a href="https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696">commit</a>.)</p>
+
+<p>This also involved storing the column or sub-field information for any fields. Many fields have multiple sub-fields or columns like body field has “value” (the actual body), “summary” (the part that is usually displayed in the teaser) and “format” (the text format this field should be rendered with). Similarly, entity_reference fields stores “target_id” instead of values thus in order to tell if a field has changed or not in comment we are storing column information and value for all the alterable fields. (See <a href="https://github.com/anchal29/comment_alter/commit/36dc9ffafe68a416b451c75d65a51e6acec7e887">commit</a>).</p>
+
+<p>By the end of the week I was able to complete the comment_form alter(). Now, we could see all comment alterable fields of the parent entity on the comment form with their default value as the one saved on parent entity. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
 
 </div>
 

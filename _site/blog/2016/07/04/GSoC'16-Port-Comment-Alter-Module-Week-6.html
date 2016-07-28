@@ -90,9 +90,24 @@
 <div id="post">
   <hr />
 
-<p><strong>Community Bonding Period</strong>
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (<a href="http://anchal298pygasvddu.devcloud.acquia-sites.com/">Link to the page</a>). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.</p>
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the sixth week of the coding period of GSoC’16. The blogpost for the work done in the fifth week can be found <a href="../../06/28/GSoC'16-Port-Comment-Alter-Module-Week-5.html">here</a>.</p>
+
+<p>Last week I worked on the submit and validate callback functions but in the submit function only the parent entity was stored. In order to show the changes made by a comment we need to create new revision of the parent entity and store the revision ID corresponding to that comment. A revision can be created using <code class="highlighter-rouge">setNewRevision</code> if the entity supports revisions. In case if entity is an instance of <a href="https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!RevisionableInterface.php/function/RevisionableInterface%3A%3AsetNewRevision/8.2.x">RevisionLogInterface</a> we also set the revision_user_id and the creation time. (For e.g. See <a href="https://api.drupal.org/api/drupal/core%21modules%21node%21src%21NodeForm.php/function/NodeForm%3A%3AsubmitForm/8.2.x">NodeForm::submitForm()</a>).</p>
+
+<p>There are some content entity type which doesn’t support revisions like the taxonomy term. For those entity we decided to allow altering of the comment alterable fields from the comment form. Though the changes made by a particular comment wouldn’t be available then as we are using revision for this.
+Later this week I tried to fix following issues related to the field widgets:</p>
+
+<ol>
+  <li>
+    <p><strong>Multi-valued fields add more option</strong>: One of the issue was add_more option of any multi-valued field widget. Clicking the add_more button was resulting in an AJAX error and we were unable to add any extra fields to a multi-valued field. Fix to the issue was rather small, just removing the <code class="highlighter-rouge">comment_alter_</code> prefix from the alterable field names solved this issue.(See <a href="https://github.com/anchal29/comment_alter/commit/f0965b87b3ea7fbfdfff7b69510107e0dba3a6b7">commit</a>)</p>
+  </li>
+  <li>
+    <p><strong>Checkboxes/radio buttons and select list widget</strong>: In case when checkboxes were used as a field widget, <code class="highlighter-rouge">Element::children()</code> was giving a fatal error as there were no any children elements in the <code class="highlighter-rouge">$form[$alterable_field][‘widget’]</code> element. So, to fix this we needed to bail out early or get the column information from the <code class="highlighter-rouge">#key_column</code> property of the form element.</p>
+  </li>
+</ol>
+
+<p>By the end of the week I was able to complete the <code class="highlighter-rouge">comment_alter_form_comment_form_alter_submit()</code> function and fixed some of the issues related to field widgets. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
 
 </div>
 

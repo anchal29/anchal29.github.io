@@ -90,9 +90,22 @@
 <div id="post">
   <hr />
 
-<p><strong>Community Bonding Period</strong>
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (<a href="http://anchal298pygasvddu.devcloud.acquia-sites.com/">Link to the page</a>). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.</p>
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the third week of the coding period of GSoC’16. The blogpost for the work done in the second week can be found <a href="../07/GSoC'16-Port-Comment-Alter-Module-Week-2.html">here</a>.</p>
+
+<p>Since I was done with <a href="https://github.com/anchal29/comment_alter/commit/1b12cfceac23afce40349d02ebb4a4c705282c89">get_alterable_fields_function()</a> last week, this week I started working on comment form alter. My mentors suggested me to port <code class="highlighter-rouge">comment_alter_field_extra_fields()</code> function first, which would add pseudo fields on comment_form for these extra comment_alterable_fields before adding widgets for these fields on the comment_form to expose some control over this to the UI. It would allow sitebuilders to re-order all the comment fields and the comment_alterable_fields. Also this function adds one extra pseudo field on comment_display so as to render the parent entity field changes for the comment in any particular place decided by the sitebuilder.</p>
+
+<blockquote>
+  <p>Pseudo fields are simple display/form fields whose position can be controlled from the display settings of a particular entity type. An example of such a field is the core Links field on the node or comment entities. This allows us to add extra fields for a particular entity which can be reordered.</p>
+</blockquote>
+
+<p>For more information related to pseudo fields, I would recommend looking at <a href="https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!entity.api.php/function/hook_entity_extra_field_info/8.2.x">hook_entity_extra_field_info()</a> and also I came across this <a href="https://www.webomelette.com/creating-pseudo-fields-drupal-8">article</a> which was helpful to me. This <a href="https://github.com/anchal29/comment_alter/commit/2458eaf72172a933f89448a39bcd911349fee2a1">commit</a> implements <code class="highlighter-rouge">hook_entity_extra_field_info()</code>.</p>
+
+<p>There were some major changes from D7 to D8 which affected the port of this function.The most important thing was that in D7 we had separate comment types for all content types so it was relatively easy to attach the extra fields of that particular content type to the comment. In D8 however any comment type can be attached to any entity type so we cannot know what extra fields we need o attach to the comment. (See change records <a href="https://www.drupal.org/node/2100015">#2100015</a> and <a href="https://www.drupal.org/node/2285633">#2285633</a>.)</p>
+
+<p>So, in order to attach the extra comment_alterable_fields of the parent entity to its comment types, we need to loop through all the comment types attached to our parent entity (as we may have more than one). I had some problem getting the comment bundle information of the comment fields attached to the parent entity which I later found in the <code class="highlighter-rouge">FieldStorageDefinitions</code>. Basically we wanted to know the comment bundle of the comment field attached to our parent entity but instead it was in <code class="highlighter-rouge">FieldStorageDefinitions</code>. (See <a href="https://github.com/anchal29/comment_alter/commit/859bdc76e1c84b74e7ca54006971ffd8af1f2e63">commit</a>.)</p>
+
+<p>By the end of the week I was able to implement hook_entity_extra_field_info(). Now I have extra fields in my comment_type _form and _display which I can drag around using the UI. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
 
 </div>
 

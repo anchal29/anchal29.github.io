@@ -9,7 +9,7 @@
   <title>Anchal - GSoC'16 - Port Comment Alter Module - Week 2</title>
   <meta name="author" content="Anchal" />
   <meta name="description" content="The blog of Anchal" />
-  <link rel="canonical" href="http://example.com/blog/drupal%20planet/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html" />
+  <link rel="canonical" href="http://example.com/blog/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html" />
 
   <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
   <link rel="shortcut icon" href="/favicon.png">
@@ -90,7 +90,17 @@
 <div id="post">
   <hr />
 
-<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt about the work which I did in the second week of the coding period of GSoC’16. Blogpost for the work done in week one can be accessed here. .</p>
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the second week of the coding period of GSoC’16. The blogpost for the work done in the first week can be found <a href="../../05/30/GSoC'16-Port-Comment-Alter-Module-Week-1.html">here</a>.</p>
+
+<p>The second week of GSoC’16 coding period is over now. During this week I was able to accomplish following tasks:</p>
+
+<ol>
+  <li><strong>Make sure that a comment alterable field of parent entity is not present in comment form</strong>: Now, in Drupal 8 this problem can arise only in one case i.e. when comment is parent entity because now fields are not shared across entity types only across the bundles of a given entity type. As upon discussion with my mentors we concluded that to avoid any unnecessary complications we would remove comment altering options from comment fields which would resolve this problem. This means comment fields can not be altered from comments now, which also doesn’t serve us any purpose.</li>
+  <li><strong>Get comment alterable fields</strong>: After providing options to make a field comment alterable and making sure that parent entities fields are not present in comment, I started to work on a function which would return all the comment alterable fields attached to the parent entity. This required getting the <code class="highlighter-rouge">ThirdPartySettings</code> stored previously to check whether a field is comment alterable or not using the field definition. Also in the meantime I was able to learn about caching in Drupal specially about cache invalidation on which I did some mistakes in the beginning. Now, the function works and I’m able to get all the comment alterable fields attached to an entity.</li>
+  <li><strong>Porting comment_alter_form_node_type_form_alter function</strong>: Procedural next step for me this week was to work on porting this function of Drupal 7 as it would affect the comment form. For now I provided this form alter for comment fields settings which needs to be moved to entity edit form.</li>
+</ol>
+
+<p>By the end of the week, with this I was able to get the list of the comment alterable fields attached to parent entity. Adding the field widgets for the comment alterable fields in the comment form would be the next step for me. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
 
 
 </div>

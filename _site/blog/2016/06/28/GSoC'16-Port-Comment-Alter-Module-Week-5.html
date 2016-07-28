@@ -90,9 +90,16 @@
 <div id="post">
   <hr />
 
-<p><strong>Community Bonding Period</strong>
-some modules which covered the basics of Form API. We used Acquia Cloud as our hosting solution where our work can be seen (<a href="http://anchal298pygasvddu.devcloud.acquia-sites.com/">Link to the page</a>). I also went through a few issues related to the module and provided patch for it.
-Since the coding period has started now, the next blog will be on my progress over the first week of coding.</p>
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the fifth week of the coding period of GSoC’16. The blogpost for the work done in the fourth week can be found <a href="../20/GSoC'16-Port-Comment-Alter-Module-Week-4.html">here</a>.</p>
+
+<p>This week I started working on submit callback function of the altered comment form which should save the changes made on the parent entity’s alterable fields present on our comment form. We can’t directly change these values in parent entity from our comment form so there was a nice trick to it. Build the entity display form again and then set the values of alterable fields in it from the comment form and then save the parent entity display form. So this way when submit function is called comment will be save and also our parent entity will be edited. (See <a href="https://github.com/anchal29/comment_alter/commit/5a1a91c62e4259c26f0205a0a1a2a5e349619b4e">commit</a>).</p>
+
+<p>After this I worked on validation callback and in similar manner i.e. by creating parent entity display form again and copying values of the comment form, validation for the form was done using <a href="https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21Display%21EntityFormDisplayInterface.php/function/EntityFormDisplayInterface%3A%3AvalidateFormValues/8.2.x">EntityFormDisplayInterface::validateFormValues()</a>. After completing this again I moved back to complete our submit callback function through which we are able to alter fields of parent entity from comment form.</p>
+
+<p>In order to show those changes we need to create revisions and to save CPU cycles and memory we need to save data only if there was some change in the alterable field entities. So as next step I made sure that anything was saved only if there were some changes in the alterable fields which required to clean up comment form alterable field values and old values to remove any non alterable columns from them. (See <a href="https://github.com/anchal29/comment_alter/commit/bbc6f7ac240642f53a8a4caea260c7249bc0668d">commit</a>).</p>
+
+<p>By the end of the week I was able to complete the validate and submit function but there are still some issues with submit callback function which needs to be rectified before we proceed further. So, I would like to work on them this week. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
 
 </div>
 
