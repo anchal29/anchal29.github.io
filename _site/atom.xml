@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>The blog of Anchal</title>
- <link href="https://anchal29.github.io//atom.xml" rel="self"/>
- <link href="https://anchal29.github.io/"/>
- <updated>2016-07-30T23:22:40+05:30</updated>
- <id>https://anchal29.github.io/</id>
+ <link href="https://anchal29.github.io/atom.xml" rel="self"/>
+ <link href="https://anchal29.github.io"/>
+ <updated>2016-07-30T23:30:15+05:30</updated>
+ <id>https://anchal29.github.io</id>
  <author>
    <name>Anchal</name>
    <email>pandey.anchal.95@gmail.com</email>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 9</title>
-   <link href="https://anchal29.github.io//blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html"/>
+   <link href="https://anchal29.github.io/blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html"/>
    <updated>2016-07-26T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9</id>
+   <id>https://anchal29.github.io/blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../19/GSoC-16-Port-Comment-Alter-Module-Week-8.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -38,9 +38,9 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 8</title>
-   <link href="https://anchal29.github.io//blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8.html"/>
+   <link href="https://anchal29.github.io/blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8.html"/>
    <updated>2016-07-19T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8</id>
+   <id>https://anchal29.github.io/blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the eighth week of the coding period of GSoC’16. The blogpost for the work done in the seventh week can be found &lt;a href=&quot;../11/GSoC-16-Port-Comment-Alter-Module-Week-7.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -60,9 +60,9 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 7</title>
-   <link href="https://anchal29.github.io//blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7.html"/>
+   <link href="https://anchal29.github.io/blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7.html"/>
    <updated>2016-07-11T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7</id>
+   <id>https://anchal29.github.io/blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the seventh week of the coding period of GSoC’16. The blogpost for the work done in the sixth week can be found &lt;a href=&quot;../04/GSoC-16-Port-Comment-Alter-Module-Week-6.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -84,9 +84,9 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 6</title>
-   <link href="https://anchal29.github.io//blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6.html"/>
+   <link href="https://anchal29.github.io/blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6.html"/>
    <updated>2016-07-04T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6</id>
+   <id>https://anchal29.github.io/blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the sixth week of the coding period of GSoC’16. The blogpost for the work done in the fifth week can be found &lt;a href=&quot;../../06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -112,9 +112,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 5</title>
-   <link href="https://anchal29.github.io//blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html"/>
+   <link href="https://anchal29.github.io/blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html"/>
    <updated>2016-06-28T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5</id>
+   <id>https://anchal29.github.io/blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fifth week of the coding period of GSoC’16. The blogpost for the work done in the fourth week can be found &lt;a href=&quot;../20/GSoC-16-Port-Comment-Alter-Module-Week-4.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -132,9 +132,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 4</title>
-   <link href="https://anchal29.github.io//blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4.html"/>
+   <link href="https://anchal29.github.io/blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4.html"/>
    <updated>2016-06-20T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4</id>
+   <id>https://anchal29.github.io/blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4</id>
    <content type="html">&lt;hr /&gt;
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fourth week of the coding period of GSoC’16. The blogpost for the work done in the third week can be found &lt;a href=&quot;../14/GSoC-16-Port-Comment-Alter-Module-Week-3.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
@@ -153,9 +153,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 3</title>
-   <link href="https://anchal29.github.io//blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3.html"/>
+   <link href="https://anchal29.github.io/blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3.html"/>
    <updated>2016-06-14T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3</id>
+   <id>https://anchal29.github.io/blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the third week of the coding period of GSoC’16. The blogpost for the work done in the second week can be found &lt;a href=&quot;../07/GSoC-16-Port-Comment-Alter-Module-Week-2.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -179,9 +179,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 2</title>
-   <link href="https://anchal29.github.io//blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2.html"/>
+   <link href="https://anchal29.github.io/blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2.html"/>
    <updated>2016-06-07T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2</id>
+   <id>https://anchal29.github.io/blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the second week of the coding period of GSoC’16. The blogpost for the work done in the first week can be found &lt;a href=&quot;../../05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -201,9 +201,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 1</title>
-   <link href="https://anchal29.github.io//blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html"/>
+   <link href="https://anchal29.github.io/blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html"/>
    <updated>2016-05-30T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1</id>
+   <id>https://anchal29.github.io/blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;The coding period for GSoC 2016 started last week from 23rd May and now students are required to start coding for their respective projects. As part of GSoC’16 I have been working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;.&lt;/p&gt;
@@ -223,9 +223,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Community bonding period</title>
-   <link href="https://anchal29.github.io//blog/2016/05/22/GSoC-16-Community-Bonding-Period.html"/>
+   <link href="https://anchal29.github.io/blog/2016/05/22/GSoC-16-Community-Bonding-Period.html"/>
    <updated>2016-05-22T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io//blog/2016/05/22/GSoC-16-Community-Bonding-Period</id>
+   <id>https://anchal29.github.io/blog/2016/05/22/GSoC-16-Community-Bonding-Period</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;blockquote&gt;
