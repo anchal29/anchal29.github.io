@@ -27,5 +27,5 @@ So by the end of the week I completed the function `assertCommentDiff()` and tes
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../19/GSoC'16-Port-Comment-Alter-Module-Week-8.html
+[previous_blog]:../19/GSoC-16-Port-Comment-Alter-Module-Week-8.html
 [commit1]:https://github.com/anchal29/comment_alter/commit/92639c8a9e3405cf98fe75b640815e0a561e5a15

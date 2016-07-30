@@ -20,7 +20,7 @@ By the end of the week I was able to complete the validate and submit function b
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../20/GSoC'16-Port-Comment-Alter-Module-Week-4.html
+[previous_blog]:../20/GSoC-16-Port-Comment-Alter-Module-Week-4.html
 [1]:https://github.com/anchal29/comment_alter/commit/5a1a91c62e4259c26f0205a0a1a2a5e349619b4e
 [2]:https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Entity%21Display%21EntityFormDisplayInterface.php/function/EntityFormDisplayInterface%3A%3AvalidateFormValues/8.2.x
 [3]:https://github.com/anchal29/comment_alter/commit/bbc6f7ac240642f53a8a4caea260c7249bc0668d

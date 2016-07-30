@@ -21,7 +21,7 @@ By the end of the week I was able to complete the comment_form alter(). Now, we 
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../14/GSoC'16-Port-Comment-Alter-Module-Week-3.html
+[previous_blog]:../14/GSoC-16-Port-Comment-Alter-Module-Week-3.html
 [commit1]:https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696
 [commit2]:https://github.com/anchal29/comment_alter/commit/4911313c3164ee1f2c3f694d311838a3c7082696
 [commit3]:https://github.com/anchal29/comment_alter/commit/36dc9ffafe68a416b451c75d65a51e6acec7e887

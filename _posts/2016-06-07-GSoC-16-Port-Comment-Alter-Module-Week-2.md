@@ -20,4 +20,4 @@ By the end of the week, with this I was able to get the list of the comment alte
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../../05/30/GSoC'16-Port-Comment-Alter-Module-Week-1.html
+[previous_blog]:../../05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html

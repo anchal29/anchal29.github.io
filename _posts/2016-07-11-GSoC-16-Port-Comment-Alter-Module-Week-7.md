@@ -24,4 +24,4 @@ By the end of the week we were able to display the differences on comments. My m
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../04/GSoC'16-Port-Comment-Alter-Module-Week-6.html
+[previous_blog]:../04/GSoC-16-Port-Comment-Alter-Module-Week-6.html

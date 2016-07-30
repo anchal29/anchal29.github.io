@@ -23,7 +23,7 @@ So by the end of the week I made some progress with the base test class and also
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../11/GSoC'16-Port-Comment-Alter-Module-Week-7.html
+[previous_blog]:../11/GSoC-16-Port-Comment-Alter-Module-Week-7.html
 [commit1]:https://github.com/anchal29/comment_alter/commit/d4e502afd17763791ece4ad778b9d8ada7f8b314
 [commit2]:https://github.com/anchal29/comment_alter/commit/554f521c76124b346f2cf225bb1decf3ac94240b
 [phpunit]:https://www.drupal.org/phpunit

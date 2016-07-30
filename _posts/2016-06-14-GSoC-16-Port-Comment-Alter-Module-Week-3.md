@@ -24,7 +24,7 @@ By the end of the week I was able to implement hook_entity_extra_field_info(). N
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../07/GSoC'16-Port-Comment-Alter-Module-Week-2.html
+[previous_blog]:../07/GSoC-16-Port-Comment-Alter-Module-Week-2.html
 [1]:https://github.com/anchal29/comment_alter/commit/1b12cfceac23afce40349d02ebb4a4c705282c89
 [2]:https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!entity.api.php/function/hook_entity_extra_field_info/8.2.x
 [article]:https://www.webomelette.com/creating-pseudo-fields-drupal-8

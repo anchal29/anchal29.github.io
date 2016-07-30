@@ -23,7 +23,7 @@ By the end of the week I was able to complete the `comment_alter_form_comment_fo
 [boobaa]:https://www.drupal.org/u/boobaa
 [czigor]:https://www.drupal.org/u/czigor
 [github_repo]:https://github.com/anchal29/comment_alter
-[previous_blog]:../../06/28/GSoC'16-Port-Comment-Alter-Module-Week-5.html
+[previous_blog]:../../06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html
 [1]:https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!RevisionableInterface.php/function/RevisionableInterface%3A%3AsetNewRevision/8.2.x
 [2]:https://api.drupal.org/api/drupal/core%21modules%21node%21src%21NodeForm.php/function/NodeForm%3A%3AsubmitForm/8.2.x
 [3]:https://github.com/anchal29/comment_alter/commit/f0965b87b3ea7fbfdfff7b69510107e0dba3a6b7

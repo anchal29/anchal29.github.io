@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
  
  <title>The blog of Anchal</title>
- <link href="http://example.com/atom.xml" rel="self"/>
- <link href="http://example.com"/>
- <updated>2016-07-28T20:53:57+05:30</updated>
- <id>http://example.com</id>
+ <link href="https://anchal29.github.io//atom.xml" rel="self"/>
+ <link href="https://anchal29.github.io/"/>
+ <updated>2016-07-30T23:22:40+05:30</updated>
+ <id>https://anchal29.github.io/</id>
  <author>
    <name>Anchal</name>
    <email>pandey.anchal.95@gmail.com</email>
@@ -14,12 +14,12 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 9</title>
-   <link href="http://example.com/blog/2016/07/26/GSoC'16-Port-Comment-Alter-Module-Week-9.html"/>
+   <link href="https://anchal29.github.io//blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html"/>
    <updated>2016-07-26T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/07/26/GSoC'16 - Port Comment Alter Module - Week 9</id>
+   <id>https://anchal29.github.io//blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../19/GSoC&#39;16-Port-Comment-Alter-Module-Week-8.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the ninth week of the coding period of GSoC’16. The blogpost for the work done in the eighth week can be found &lt;a href=&quot;../19/GSoC-16-Port-Comment-Alter-Module-Week-8.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This week I continued to work on providing test coverage for the module. Last week we decided to use &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTest&lt;/code&gt; as our parent entity and check the functionality of the module over it but while writing tests I came to know that it didn’t support revisions. To write tests using revisionable entities we have to use &lt;code class=&quot;highlighter-rouge&quot;&gt;EntityTestRev&lt;/code&gt;.&lt;/p&gt;
 
@@ -38,12 +38,12 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 8</title>
-   <link href="http://example.com/blog/2016/07/19/GSoC'16-Port-Comment-Alter-Module-Week-8.html"/>
+   <link href="https://anchal29.github.io//blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8.html"/>
    <updated>2016-07-19T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/07/19/GSoC'16 - Port Comment Alter Module - Week 8</id>
+   <id>https://anchal29.github.io//blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the eighth week of the coding period of GSoC’16. The blogpost for the work done in the seventh week can be found &lt;a href=&quot;../11/GSoC&#39;16-Port-Comment-Alter-Module-Week-7.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the eighth week of the coding period of GSoC’16. The blogpost for the work done in the seventh week can be found &lt;a href=&quot;../11/GSoC-16-Port-Comment-Alter-Module-Week-7.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This week I worked on providing test coverage for the module and fixed some issues. We decided to split the test into multiple classes which would extend one base class. This week I worked on this base class. We are using the entity_test provided by core’s system module for testing purpose instead of any other ContentEntityType so that our tests could be as generic as possible (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/d4e502afd17763791ece4ad778b9d8ada7f8b314&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
 
@@ -60,12 +60,12 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 7</title>
-   <link href="http://example.com/blog/2016/07/11/GSoC'16-Port-Comment-Alter-Module-Week-7.html"/>
+   <link href="https://anchal29.github.io//blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7.html"/>
    <updated>2016-07-11T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/07/11/GSoC'16 - Port Comment Alter Module - Week 7</id>
+   <id>https://anchal29.github.io//blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the seventh week of the coding period of GSoC’16. The blogpost for the work done in the sixth week can be found &lt;a href=&quot;../04/GSoC&#39;16-Port-Comment-Alter-Module-Week-6.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the seventh week of the coding period of GSoC’16. The blogpost for the work done in the sixth week can be found &lt;a href=&quot;../04/GSoC-16-Port-Comment-Alter-Module-Week-6.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This week I worked on showing the differences made by a comment on the parent entity which involved using the Diff module. The differences are displayed only for parent entities supporting revisions (Node and Block Content in core). For the rest of the content entities comment alteration is supported but the differences are not shown.&lt;/p&gt;
 
@@ -84,12 +84,12 @@
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 6</title>
-   <link href="http://example.com/blog/2016/07/04/GSoC'16-Port-Comment-Alter-Module-Week-6.html"/>
+   <link href="https://anchal29.github.io//blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6.html"/>
    <updated>2016-07-04T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/07/04/GSoC'16 - Port Comment Alter Module - Week 6</id>
+   <id>https://anchal29.github.io//blog/2016/07/04/GSoC-16-Port-Comment-Alter-Module-Week-6</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the sixth week of the coding period of GSoC’16. The blogpost for the work done in the fifth week can be found &lt;a href=&quot;../../06/28/GSoC&#39;16-Port-Comment-Alter-Module-Week-5.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the sixth week of the coding period of GSoC’16. The blogpost for the work done in the fifth week can be found &lt;a href=&quot;../../06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Last week I worked on the submit and validate callback functions but in the submit function only the parent entity was stored. In order to show the changes made by a comment we need to create new revision of the parent entity and store the revision ID corresponding to that comment. A revision can be created using &lt;code class=&quot;highlighter-rouge&quot;&gt;setNewRevision&lt;/code&gt; if the entity supports revisions. In case if entity is an instance of &lt;a href=&quot;https://api.drupal.org/api/drupal/core!lib!Drupal!Core!Entity!RevisionableInterface.php/function/RevisionableInterface%3A%3AsetNewRevision/8.2.x&quot;&gt;RevisionLogInterface&lt;/a&gt; we also set the revision_user_id and the creation time. (For e.g. See &lt;a href=&quot;https://api.drupal.org/api/drupal/core%21modules%21node%21src%21NodeForm.php/function/NodeForm%3A%3AsubmitForm/8.2.x&quot;&gt;NodeForm::submitForm()&lt;/a&gt;).&lt;/p&gt;
 
@@ -112,12 +112,12 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 5</title>
-   <link href="http://example.com/blog/2016/06/28/GSoC'16-Port-Comment-Alter-Module-Week-5.html"/>
+   <link href="https://anchal29.github.io//blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5.html"/>
    <updated>2016-06-28T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/06/28/GSoC'16 - Port Comment Alter Module - Week 5</id>
+   <id>https://anchal29.github.io//blog/2016/06/28/GSoC-16-Port-Comment-Alter-Module-Week-5</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fifth week of the coding period of GSoC’16. The blogpost for the work done in the fourth week can be found &lt;a href=&quot;../20/GSoC&#39;16-Port-Comment-Alter-Module-Week-4.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fifth week of the coding period of GSoC’16. The blogpost for the work done in the fourth week can be found &lt;a href=&quot;../20/GSoC-16-Port-Comment-Alter-Module-Week-4.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This week I started working on submit callback function of the altered comment form which should save the changes made on the parent entity’s alterable fields present on our comment form. We can’t directly change these values in parent entity from our comment form so there was a nice trick to it. Build the entity display form again and then set the values of alterable fields in it from the comment form and then save the parent entity display form. So this way when submit function is called comment will be save and also our parent entity will be edited. (See &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/5a1a91c62e4259c26f0205a0a1a2a5e349619b4e&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
 
@@ -132,11 +132,11 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 4</title>
-   <link href="http://example.com/blog/2016/06/20/GSoC'16-Port-Comment-Alter-Module-Week-4.html"/>
+   <link href="https://anchal29.github.io//blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4.html"/>
    <updated>2016-06-20T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/06/20/GSoC'16 - Port Comment Alter Module - Week 4</id>
+   <id>https://anchal29.github.io//blog/2016/06/20/GSoC-16-Port-Comment-Alter-Module-Week-4</id>
    <content type="html">&lt;hr /&gt;
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fourth week of the coding period of GSoC’16. The blogpost for the work done in the third week can be found &lt;a href=&quot;../14/GSoC&#39;16-Port-Comment-Alter-Module-Week-3.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the fourth week of the coding period of GSoC’16. The blogpost for the work done in the third week can be found &lt;a href=&quot;../14/GSoC-16-Port-Comment-Alter-Module-Week-3.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Fourth week of coding period has ended and this week I worked on completing the comment_form_alter() which is supposedly the toughest part of the comment_alter module. After implementing &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_extra_field_info()&lt;/code&gt; last week, we needed to add field widgets for the pseudo fields added in the &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_extra_field_info()&lt;/code&gt; implementation for the comment alterable fields.&lt;/p&gt;
 
@@ -153,12 +153,12 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 3</title>
-   <link href="http://example.com/blog/2016/06/14/GSoC'16-Port-Comment-Alter-Module-Week-3.html"/>
+   <link href="https://anchal29.github.io//blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3.html"/>
    <updated>2016-06-14T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/06/14/GSoC'16 - Port Comment Alter Module - Week 3</id>
+   <id>https://anchal29.github.io//blog/2016/06/14/GSoC-16-Port-Comment-Alter-Module-Week-3</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the third week of the coding period of GSoC’16. The blogpost for the work done in the second week can be found &lt;a href=&quot;../07/GSoC&#39;16-Port-Comment-Alter-Module-Week-2.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the third week of the coding period of GSoC’16. The blogpost for the work done in the second week can be found &lt;a href=&quot;../07/GSoC-16-Port-Comment-Alter-Module-Week-2.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Since I was done with &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/1b12cfceac23afce40349d02ebb4a4c705282c89&quot;&gt;get_alterable_fields_function()&lt;/a&gt; last week, this week I started working on comment form alter. My mentors suggested me to port &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_field_extra_fields()&lt;/code&gt; function first, which would add pseudo fields on comment_form for these extra comment_alterable_fields before adding widgets for these fields on the comment_form to expose some control over this to the UI. It would allow sitebuilders to re-order all the comment fields and the comment_alterable_fields. Also this function adds one extra pseudo field on comment_display so as to render the parent entity field changes for the comment in any particular place decided by the sitebuilder.&lt;/p&gt;
 
@@ -179,12 +179,12 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 2</title>
-   <link href="http://example.com/blog/2016/06/07/GSoC'16-Port-Comment-Alter-Module-Week-2.html"/>
+   <link href="https://anchal29.github.io//blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2.html"/>
    <updated>2016-06-07T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/06/07/GSoC'16 - Port Comment Alter Module - Week 2</id>
+   <id>https://anchal29.github.io//blog/2016/06/07/GSoC-16-Port-Comment-Alter-Module-Week-2</id>
    <content type="html">&lt;hr /&gt;
 
-&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the second week of the coding period of GSoC’16. The blogpost for the work done in the first week can be found &lt;a href=&quot;../../05/30/GSoC&#39;16-Port-Comment-Alter-Module-Week-1.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the second week of the coding period of GSoC’16. The blogpost for the work done in the first week can be found &lt;a href=&quot;../../05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The second week of GSoC’16 coding period is over now. During this week I was able to accomplish following tasks:&lt;/p&gt;
 
@@ -201,9 +201,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 1</title>
-   <link href="http://example.com/blog/2016/05/30/GSoC'16-Port-Comment-Alter-Module-Week-1.html"/>
+   <link href="https://anchal29.github.io//blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1.html"/>
    <updated>2016-05-30T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/05/30/GSoC'16 - Port Comment Alter Module - Week 1</id>
+   <id>https://anchal29.github.io//blog/2016/05/30/GSoC-16-Port-Comment-Alter-Module-Week-1</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;The coding period for GSoC 2016 started last week from 23rd May and now students are required to start coding for their respective projects. As part of GSoC’16 I have been working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;.&lt;/p&gt;
@@ -223,9 +223,9 @@ Later this week I tried to fix following issues related to the field widgets:&lt
  
  <entry>
    <title>GSoC'16 - Community bonding period</title>
-   <link href="http://example.com/blog/2016/05/22/GSoC'16-Community-Bonding-Period.html"/>
+   <link href="https://anchal29.github.io//blog/2016/05/22/GSoC-16-Community-Bonding-Period.html"/>
    <updated>2016-05-22T00:00:00+05:30</updated>
-   <id>http://example.com/blog/2016/05/22/GSoC'16 - Community Bonding Period</id>
+   <id>https://anchal29.github.io//blog/2016/05/22/GSoC-16-Community-Bonding-Period</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;blockquote&gt;
