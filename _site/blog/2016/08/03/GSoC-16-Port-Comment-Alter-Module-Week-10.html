@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anchal - GSoC'16 - Port Comment Alter Module - Week 10</title>
+  <meta name="author" content="Anchal" />
+  <meta name="description" content="The blog of Anchal" />
+  <link rel="canonical" href="https://anchal29.github.io/blog/2016/08/03/GSoC-16-Port-Comment-Alter-Module-Week-10.html" />
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="Anchal" href="https://anchal29.github.io/atom.xml" />
+
+  <link rel="stylesheet" href="/assets/css/all.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+      <nav>
+  <h1>Hi.</h1>
+  <a href="/">
+    
+    <img src="/logo.png" id="logo" alt="Blog logo"/>
+    
+  </a>
+  <h2>I'm <a href="/">Anchal</a>.</h2>
+  <div id="bio">
+    <p style="text-align: center;">Drupal, GSoC and anime</p>
+  </div>
+  <div id="social">
+    Follow me:
+<div id="stalker">
+  
+  <a title="anchal29 on Github" href="https://github.com/anchal29">
+    <i class="fa fa-github-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Anchal on Facebook" href="https://facebook.com/anchal.pandey.186">
+    <i class="fa fa-facebook-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Atom feed" id="atom" href="/atom.xml">
+    <i class="fa fa-rss-square"></i>
+  </a>
+  
+</div>
+
+  </div>
+</nav>
+
+    </div>
+
+    <div class="eleven columns content">
+      <p class="meta">
+  August 03, 2016 
+  <a href="/">
+    <i class="home fa fa-home"></i>
+  </a>
+</p>
+
+<h1 class="title">GSoC'16 - Port Comment Alter Module - Week 10</h1>
+
+<div id="post">
+  <hr />
+
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the tenth week of the coding period of GSoC’16. The blogpost for the work done in the ninth week can be found <a href="../../07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html">here</a>.</p>
+
+<p>Since I was almost done with the base test class last week, this week I mainly focused on providing test cases for different fields and widget types. Also I added tests to the base class to check that the module is not breaking anything on a revision delete. I started this week by extending the tests for text fields which I completed last week to cover multi-valued text field altering. Then I added tests for list(string) fields which included several widget types like select list, checkboxes and radio buttons.</p>
+
+<p>Later this week I added tests to check if the <code class="highlighter-rouge">hook_entity_revision_delete()</code> was working as intended, i.e. the module was not breaking anything in case a revision of the parent entity was deleted. After this I added tests for image fields and while doing this I came across an issue with multi-valued image/file fields which I corrected and it is working fine now, without breaking anything else.</p>
+
+<hr />
+
+<h1 id="executing-the-automated-tests">Executing the automated tests</h1>
+
+<p>The module has PHPUnit tests and it is recommended to execute the unit tests using command line instead of the web interface provided by the SimpleTest module. More instructions can be found <a href="https://www.drupal.org/node/2116263">on the related drupal.org documentation page</a>. Executing these web tests:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">cd</span> <span class="sr">/path/</span><span class="n">to</span><span class="o">/</span><span class="n">drupal</span><span class="o">-</span><span class="mi">8</span><span class="o">/</span><span class="n">core</span>
+<span class="n">export</span> <span class="no">SIMPLETEST_DB</span><span class="o">=</span><span class="n">mysql</span><span class="ss">:/</span><span class="o">/</span><span class="n">drupal</span><span class="o">-</span><span class="mi">8</span><span class="ss">:password</span><span class="vi">@localhost</span><span class="o">/</span><span class="n">drupal</span><span class="o">-</span><span class="mi">8</span>
+<span class="n">export</span> <span class="no">SIMPLETEST_BASE_URL</span><span class="o">=</span><span class="n">http</span><span class="ss">:/</span><span class="o">/</span><span class="n">drupal</span><span class="o">-</span><span class="mi">8</span><span class="p">.</span><span class="nf">localhost</span>
+<span class="p">.</span><span class="nf">.</span><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">phpunit</span> <span class="o">--</span><span class="n">group</span> <span class="n">comment_alter</span></code></pre></figure>
+
+<p>When the user executing these functional tests is different than the one running the web server (apache for example), an exception is thrown and it’s not very clear what the problem is. Running these tests as root or changing permissions of files doesn’t have any effect on it. The recommended approach here is to change the user running the web server to the system user.
+Other way is to run these tests with the same user as the one running the web server, this can be achieved by using this command instead (see <a href="https://www.drupal.org/node/2760905">#2760905</a>):</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">apache</span> <span class="p">.</span><span class="nf">.</span><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">phpunit</span> <span class="o">--</span><span class="n">group</span> <span class="n">comment_alter</span></code></pre></figure>
+
+<p>To execute any single test or a class the <code class="highlighter-rouge">--filter</code> tag can be used. Example: if we just want to run <code class="highlighter-rouge">testOptionsSelectSingle</code> then following command will do so:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">.</span><span class="nf">.</span><span class="o">/</span><span class="n">vendor</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">phpunit</span> <span class="o">--</span><span class="n">group</span> <span class="n">comment_alter</span> <span class="o">--</span><span class="n">filter</span> <span class="n">testOptionsSelectSingle</span></code></pre></figure>
+
+<hr />
+
+<p>By the end of the week I completed tests for single and multi-valued text, list(string) and image fields. As of now the module is passing all the tests and there are no known issues. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
+
+</div>
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+    <li>
+      <span>26 Jul 2016 &raquo;</span> <a href="/blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html">GSoC'16 - Port Comment Alter Module - Week 9</a>
+    </li>
+    
+    <li>
+      <span>19 Jul 2016 &raquo;</span> <a href="/blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8.html">GSoC'16 - Port Comment Alter Module - Week 8</a>
+    </li>
+    
+    <li>
+      <span>11 Jul 2016 &raquo;</span> <a href="/blog/2016/07/11/GSoC-16-Port-Comment-Alter-Module-Week-7.html">GSoC'16 - Port Comment Alter Module - Week 7</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="footer">
+        <div class="disclaimer">
+  
+
+  <p>
+    © Anchal, 2016 &mdash; built with <a href="http://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/swanson/lagom">Lagom theme</a>
+  </p>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-xxxx-x']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

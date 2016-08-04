@@ -4,13 +4,53 @@
  <title>The blog of Anchal</title>
  <link href="https://anchal29.github.io/atom.xml" rel="self"/>
  <link href="https://anchal29.github.io"/>
- <updated>2016-07-30T23:30:15+05:30</updated>
+ <updated>2016-08-04T19:26:42+05:30</updated>
  <id>https://anchal29.github.io</id>
  <author>
    <name>Anchal</name>
    <email>pandey.anchal.95@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 10</title>
+   <link href="https://anchal29.github.io/blog/2016/08/03/GSoC-16-Port-Comment-Alter-Module-Week-10.html"/>
+   <updated>2016-08-03T00:00:00+05:30</updated>
+   <id>https://anchal29.github.io/blog/2016/08/03/GSoC-16-Port-Comment-Alter-Module-Week-10</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the tenth week of the coding period of GSoC’16. The blogpost for the work done in the ninth week can be found &lt;a href=&quot;../../07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since I was almost done with the base test class last week, this week I mainly focused on providing test cases for different fields and widget types. Also I added tests to the base class to check that the module is not breaking anything on a revision delete. I started this week by extending the tests for text fields which I completed last week to cover multi-valued text field altering. Then I added tests for list(string) fields which included several widget types like select list, checkboxes and radio buttons.&lt;/p&gt;
+
+&lt;p&gt;Later this week I added tests to check if the &lt;code class=&quot;highlighter-rouge&quot;&gt;hook_entity_revision_delete()&lt;/code&gt; was working as intended, i.e. the module was not breaking anything in case a revision of the parent entity was deleted. After this I added tests for image fields and while doing this I came across an issue with multi-valued image/file fields which I corrected and it is working fine now, without breaking anything else.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;executing-the-automated-tests&quot;&gt;Executing the automated tests&lt;/h1&gt;
+
+&lt;p&gt;The module has PHPUnit tests and it is recommended to execute the unit tests using command line instead of the web interface provided by the SimpleTest module. More instructions can be found &lt;a href=&quot;https://www.drupal.org/node/2116263&quot;&gt;on the related drupal.org documentation page&lt;/a&gt;. Executing these web tests:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/path/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drupal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;core&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SIMPLETEST_DB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drupal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:password&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@localhost&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drupal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SIMPLETEST_BASE_URL&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;http&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:/&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;drupal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;localhost&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phpunit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment_alter&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;When the user executing these functional tests is different than the one running the web server (apache for example), an exception is thrown and it’s not very clear what the problem is. Running these tests as root or changing permissions of files doesn’t have any effect on it. The recommended approach here is to change the user running the web server to the system user.
+Other way is to run these tests with the same user as the one running the web server, this can be achieved by using this command instead (see &lt;a href=&quot;https://www.drupal.org/node/2760905&quot;&gt;#2760905&lt;/a&gt;):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;n&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;apache&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phpunit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment_alter&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;To execute any single test or a class the &lt;code class=&quot;highlighter-rouge&quot;&gt;--filter&lt;/code&gt; tag can be used. Example: if we just want to run &lt;code class=&quot;highlighter-rouge&quot;&gt;testOptionsSelectSingle&lt;/code&gt; then following command will do so:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vendor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;phpunit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comment_alter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;testOptionsSelectSingle&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;By the end of the week I completed tests for single and multi-valued text, list(string) and image fields. As of now the module is passing all the tests and there are no known issues. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 9</title>
