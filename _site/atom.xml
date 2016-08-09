@@ -4,13 +4,44 @@
  <title>The blog of Anchal</title>
  <link href="https://anchal29.github.io/atom.xml" rel="self"/>
  <link href="https://anchal29.github.io"/>
- <updated>2016-08-04T19:26:42+05:30</updated>
+ <updated>2016-08-09T17:38:01+05:30</updated>
  <id>https://anchal29.github.io</id>
  <author>
    <name>Anchal</name>
    <email>pandey.anchal.95@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 11</title>
+   <link href="https://anchal29.github.io/blog/2016/08/08/GSoC-16-Port-Comment-Alter-Module-Week-11.html"/>
+   <updated>2016-08-08T00:00:00+05:30</updated>
+   <id>https://anchal29.github.io/blog/2016/08/08/GSoC-16-Port-Comment-Alter-Module-Week-11</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting Comment Alter module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the eleventh week of the coding period of GSoC’16. The blogpost for the work done in the tenth week can be found &lt;a href=&quot;../03/GSoC-16-Port-Comment-Alter-Module-Week-10.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;In D7 the comment settings were present on the node and those settings were managed from node edit forms whereas in D8 comments settings became fields and they could be attached to any other entity type (see change record &lt;a href=&quot;https://www.drupal.org/node/2100015&quot;&gt;#2100015&lt;/a&gt;). In D7 version of the module all the comment related settings were present on that comment settings section of the node type edit/add form. So in D8 we could have added those settings to either the entity_type edit form or to the comment fields and we decided to go with the later one. This week I added all these settings and their implementations along with the tests for them (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/80e04efb6b73983d4eb7bbeb8d09e6be6eea4034&quot;&gt;commit1&lt;/a&gt; and &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/d3083a50c85848efb3ab5d426433f90348fd0794&quot;&gt;commit2&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;During our weekly stand-up this week we had following discussions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Both of my mentors are going to do a final review of the whole code and after all the corrections hopefully the module can be pushed to d.o. I’ve been provided with the required permissions to do so.&lt;/li&gt;
+  &lt;li&gt;I’ll be creating a demo video this week. The demo video will cover comment_altering of node fields and it will cover all the comment related settings which governs working of the module.&lt;/li&gt;
+  &lt;li&gt;Since the deadline of the final submission of our GSoC project is 23rd Aug we had a discussion about the final submission. Based on the &lt;a href=&quot;https://developers.google.com/open-source/gsoc/help/work-product&quot;&gt;Work Product Submission Guidelines&lt;/a&gt;, &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; suggested me to do the following two things:
+    &lt;ol&gt;
+      &lt;li&gt;Prepare a blog post describing all the work which I did and what is left in that and why.&lt;/li&gt;
+      &lt;li&gt;The link to the github repo on which I worked throughout this project. Also we will have the d.o. repo of the module.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Last week I added tests for most of the field types but as suggested by my mentors this week I also added tests for Entity Reference fields (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/552e6a512a7c597191daa0c9ccef9856875ce52e&quot;&gt;commit&lt;/a&gt;). As of now the module is working on Drupal 8.2.x and all the tests are also passing. Once the final review of the module is done we plan to push the code to d.o.&lt;/p&gt;
+
+&lt;p&gt;By the end of the week I completed tests for node reference fields and added comment_alter related settings and also added tests for them. For now I’ll work on adding documentation for the module. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 10</title>

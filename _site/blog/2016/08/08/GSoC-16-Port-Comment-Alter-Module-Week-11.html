@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anchal - GSoC'16 - Port Comment Alter Module - Week 11</title>
+  <meta name="author" content="Anchal" />
+  <meta name="description" content="The blog of Anchal" />
+  <link rel="canonical" href="https://anchal29.github.io/blog/2016/08/08/GSoC-16-Port-Comment-Alter-Module-Week-11.html" />
+
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:600,800" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="/favicon.png">
+  <link rel="alternate" type="application/atom+xml" title="Anchal" href="https://anchal29.github.io/atom.xml" />
+
+  <link rel="stylesheet" href="/assets/css/all.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-k2/8zcNbxVIh5mnQ52A0r3a6jAgMGxFJFE2707UxGCk= sha512-ZV9KawG2Legkwp3nAlxLIVFudTauWuBpC10uEafMHYL0Sarrz5A7G79kXh5+5+woxQ5HM559XX2UZjMJ36Wplg==" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="four columns sidebar">
+      <nav>
+  <h1>Hi.</h1>
+  <a href="/">
+    
+    <img src="/logo.png" id="logo" alt="Blog logo"/>
+    
+  </a>
+  <h2>I'm <a href="/">Anchal</a>.</h2>
+  <div id="bio">
+    <p style="text-align: center;">Drupal, GSoC and anime</p>
+  </div>
+  <div id="social">
+    Follow me:
+<div id="stalker">
+  
+  <a title="anchal29 on Github" href="https://github.com/anchal29">
+    <i class="fa fa-github-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Anchal on Facebook" href="https://facebook.com/anchal.pandey.186">
+    <i class="fa fa-facebook-square"></i>
+  </a>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <a title="Atom feed" id="atom" href="/atom.xml">
+    <i class="fa fa-rss-square"></i>
+  </a>
+  
+</div>
+
+  </div>
+</nav>
+
+    </div>
+
+    <div class="eleven columns content">
+      <p class="meta">
+  August 08, 2016
+  <a href="/">
+    <i class="home fa fa-home"></i>
+  </a>
+</p>
+
+<h1 class="title">GSoC'16 - Port Comment Alter Module - Week 11</h1>
+
+<div id="post">
+  <hr />
+
+<p>As part of GSoC’16 I’m working on <strong>Porting Comment Alter module to Drupal 8</strong> under the mentorship of <a href="https://www.drupal.org/u/boobaa">boobaa</a> and <a href="https://www.drupal.org/u/czigor">czigor</a>. This blog is an excerpt of the work which I did in the eleventh week of the coding period of GSoC’16. The blogpost for the work done in the tenth week can be found <a href="../03/GSoC-16-Port-Comment-Alter-Module-Week-10.html">here</a>.</p>
+
+<p>In D7 the comment settings were present on the node and those settings were managed from node edit forms whereas in D8 comments settings became fields and they could be attached to any other entity type (see change record <a href="https://www.drupal.org/node/2100015">#2100015</a>). In D7 version of the module all the comment related settings were present on that comment settings section of the node type edit/add form. So in D8 we could have added those settings to either the entity_type edit form or to the comment fields and we decided to go with the later one. This week I added all these settings and their implementations along with the tests for them (see <a href="https://github.com/anchal29/comment_alter/commit/80e04efb6b73983d4eb7bbeb8d09e6be6eea4034">commit1</a> and <a href="https://github.com/anchal29/comment_alter/commit/d3083a50c85848efb3ab5d426433f90348fd0794">commit2</a>).</p>
+
+<p>During our weekly stand-up this week we had following discussions:</p>
+
+<ul>
+  <li>Both of my mentors are going to do a final review of the whole code and after all the corrections hopefully the module can be pushed to d.o. I’ve been provided with the required permissions to do so.</li>
+  <li>I’ll be creating a demo video this week. The demo video will cover comment_altering of node fields and it will cover all the comment related settings which governs working of the module.</li>
+  <li>Since the deadline of the final submission of our GSoC project is 23rd Aug we had a discussion about the final submission. Based on the <a href="https://developers.google.com/open-source/gsoc/help/work-product">Work Product Submission Guidelines</a>, <a href="https://www.drupal.org/u/boobaa">boobaa</a> suggested me to do the following two things:
+    <ol>
+      <li>Prepare a blog post describing all the work which I did and what is left in that and why.</li>
+      <li>The link to the github repo on which I worked throughout this project. Also we will have the d.o. repo of the module.</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Last week I added tests for most of the field types but as suggested by my mentors this week I also added tests for Entity Reference fields (see <a href="https://github.com/anchal29/comment_alter/commit/552e6a512a7c597191daa0c9ccef9856875ce52e">commit</a>). As of now the module is working on Drupal 8.2.x and all the tests are also passing. Once the final review of the module is done we plan to push the code to d.o.</p>
+
+<p>By the end of the week I completed tests for node reference fields and added comment_alter related settings and also added tests for them. For now I’ll work on adding documentation for the module. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed in my <a href="https://github.com/anchal29/comment_alter">GitHub repo</a>.</p>
+
+
+</div>
+
+
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        var disqus_shortname = 'anchal29';
+        var disqus_identifier = "/blog/2016/08/08/GSoC-16-Port-Comment-Alter-Module-Week-11.html";
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+<div id="related">
+  <h3>Related Posts</h3>
+  <ul class="posts">
+    
+    <li>
+      <span>03 Aug 2016 &raquo;</span> <a href="/blog/2016/08/03/GSoC-16-Port-Comment-Alter-Module-Week-10.html">GSoC'16 - Port Comment Alter Module - Week 10</a>
+    </li>
+    
+    <li>
+      <span>26 Jul 2016 &raquo;</span> <a href="/blog/2016/07/26/GSoC-16-Port-Comment-Alter-Module-Week-9.html">GSoC'16 - Port Comment Alter Module - Week 9</a>
+    </li>
+    
+    <li>
+      <span>19 Jul 2016 &raquo;</span> <a href="/blog/2016/07/19/GSoC-16-Port-Comment-Alter-Module-Week-8.html">GSoC'16 - Port Comment Alter Module - Week 8</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      <div class="footer">
+        <div class="disclaimer">
+  
+
+  <p>
+    © Anchal, 2016 &mdash; built with <a href="http://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/swanson/lagom">Lagom theme</a>
+  </p>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-xxxx-x']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
