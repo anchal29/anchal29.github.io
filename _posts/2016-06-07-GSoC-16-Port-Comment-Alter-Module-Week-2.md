@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GSoC'16 - Port Comment Alter Module - Week 2
+comments: true
 categories:
 - blog
 ---

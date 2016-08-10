@@ -1,6 +1,7 @@
 ---
 layout: post
 title: GSoC'16 - Community bonding period
+comments: true
 categories:
 - blog
 ---
