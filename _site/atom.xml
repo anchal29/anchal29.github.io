@@ -4,13 +4,40 @@
  <title>The blog of Anchal</title>
  <link href="https://anchal29.github.io/atom.xml" rel="self"/>
  <link href="https://anchal29.github.io"/>
- <updated>2016-08-11T01:55:27+05:30</updated>
+ <updated>2016-08-19T17:10:08+05:30</updated>
  <id>https://anchal29.github.io</id>
  <author>
    <name>Anchal</name>
    <email>pandey.anchal.95@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>GSoC'16 - Port Comment Alter Module - Week 12</title>
+   <link href="https://anchal29.github.io/blog/2016/08/17/GSoC-16-Port-Comment-Alter-Module-Week-12.html"/>
+   <updated>2016-08-17T00:00:00+05:30</updated>
+   <id>https://anchal29.github.io/blog/2016/08/17/GSoC-16-Port-Comment-Alter-Module-Week-12</id>
+   <content type="html">&lt;hr /&gt;
+
+&lt;p&gt;As part of GSoC’16 I’m working on &lt;strong&gt;Porting &lt;a href=&quot;https://www.drupal.org/project/comment_alter&quot;&gt;Comment Alter&lt;/a&gt; module to Drupal 8&lt;/strong&gt; under the mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work which I did in the twelfth week of the coding period of GSoC’16. The blogpost for the work done in the eleventh week can be found &lt;a href=&quot;../08/GSoC-16-Port-Comment-Alter-Module-Week-11.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The GSoC coding period ends this week and I’m glad that I was able to complete the project as per my proposal. All these three months have been very productive for me during which I learned a ton of things not just related to Drupal but also things like writing blogs, managing the project, etc.&lt;/p&gt;
+
+&lt;p&gt;During the coding period being stuck on a problem for 3-4 days and after countless hours of debugging finding the solution to be a one-liner or getting good reviews from mentors were some of the most intriguing and satisfying moments for me. I would like to thank both of my mentors &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt; for always helping me with coding, blogs and project management. It would have never been possible without them. I would also like to thank the whole Drupal community  and Google Summer of Code for providing this opportunity to me.&lt;/p&gt;
+
+&lt;p&gt;Now talking about the work which I did this week, since most of the coding part was completed last week this week I focused on adding documentation for the module, doing cleaning and proof reading of the whole repo. I’ve created a short demo video: &lt;a href=&quot;https://www.youtube.com/watch?v=9ZJqlbrPwxY&quot;&gt;Comment Alter module for Drupal 8&lt;/a&gt; demonstrating a simple use case and working of the module.&lt;/p&gt;
+
+&lt;iframe width=&quot;630&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9ZJqlbrPwxY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;This week I also fixed some minor issues like changing the &lt;code class=&quot;highlighter-rouge&quot;&gt;#parent&lt;/code&gt; property for the comment form for all the fields to avoid any clashes. In order to allow same name fields on both comment as well as parent entity the &lt;code class=&quot;highlighter-rouge&quot;&gt;#parent&lt;/code&gt; property was used in the &lt;code class=&quot;highlighter-rouge&quot;&gt;comment_alter_form_comment_form_alter()&lt;/code&gt; function. Due to this the submitted field values appeared at a different location preventing instances of multiple field value in the same &lt;code class=&quot;highlighter-rouge&quot;&gt;#parent&lt;/code&gt; space or &lt;code class=&quot;highlighter-rouge&quot;&gt;$form&lt;/code&gt; element (see &lt;a href=&quot;https://github.com/anchal29/comment_alter/commit/161cf5ea9671d6772d8963610d1b7cc359c8ebe2&quot;&gt;commit&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;In the upcoming week I would first move the module to &lt;a href=&quot;https://www.drupal.org/&quot;&gt;drupal.org&lt;/a&gt; and will update the description about the module on the project page. I planned to move the module to drupal.org last week only but because of some complications, my mentors were unable to do the final review of the module. My mentors will do with the review before this Friday so I’ll move the module to drupal.org by then.&lt;/p&gt;
+
+&lt;p&gt;By the end of the week I’ve created a demo video for the module and fixed some issues. My mentors have already reviewed the code for the work which I did during this week. If anyone is interested, my progress can be followed on my &lt;a href=&quot;https://github.com/anchal29/comment_alter&quot;&gt;GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>GSoC'16 - Port Comment Alter Module - Week 11</title>
