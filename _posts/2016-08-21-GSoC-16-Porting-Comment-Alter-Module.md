@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GSoC'16 - Port Comment Alter Module - Overview
+title: GSoC'16 - Porting Comment Alter Module
 comments: true
 categories:
 - blog

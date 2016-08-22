@@ -4,7 +4,7 @@
  <title>The blog of Anchal</title>
  <link href="https://anchal29.github.io/atom.xml" rel="self"/>
  <link href="https://anchal29.github.io"/>
- <updated>2016-08-22T19:10:27+05:30</updated>
+ <updated>2016-08-22T19:21:52+05:30</updated>
  <id>https://anchal29.github.io</id>
  <author>
    <name>Anchal</name>
@@ -13,10 +13,10 @@
 
  
  <entry>
-   <title>GSoC'16 - Port Comment Alter Module - Overview</title>
-   <link href="https://anchal29.github.io/blog/2016/08/21/GSoC-16-Port-Comment-Alter-Module-Overview.html"/>
+   <title>GSoC'16 - Porting Comment Alter Module</title>
+   <link href="https://anchal29.github.io/blog/2016/08/21/GSoC-16-Porting-Comment-Alter-Module.html"/>
    <updated>2016-08-21T00:00:00+05:30</updated>
-   <id>https://anchal29.github.io/blog/2016/08/21/GSoC-16-Port-Comment-Alter-Module-Overview</id>
+   <id>https://anchal29.github.io/blog/2016/08/21/GSoC-16-Porting-Comment-Alter-Module</id>
    <content type="html">&lt;hr /&gt;
 
 &lt;p&gt;For the last 3 months I’ve been working on &lt;strong&gt;Porting the Comment Alter module to Drupal 8&lt;/strong&gt; as my GSoC’16 project under mentorship of &lt;a href=&quot;https://www.drupal.org/u/boobaa&quot;&gt;boobaa&lt;/a&gt; and &lt;a href=&quot;https://www.drupal.org/u/czigor&quot;&gt;czigor&lt;/a&gt;. This blog is an excerpt of the work I did during this time period. Weekly blog posts for the past 12 weeks can be accessed &lt;a href=&quot;https://anchal29.github.io&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
